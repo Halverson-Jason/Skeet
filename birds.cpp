@@ -8,6 +8,12 @@
 
 #include "birds.h" 
 #include "uiDraw.h"
+#include <stdlib.h>
+#include <time.h>
+
+#define STARTING_X 0
+#define STARTING_Y 0
+#define STARTING_DX 1
 
 /***********************************************************************
  * Default constructor
@@ -15,7 +21,14 @@
 
 Bird :: Bird()
 {
-   
+      //TODO make bird random location
+   radius = 15;
+   setRandomX();
+   startingPoint.setX(STARTING_X);
+   startingPoint.setY(STARTING_Y);
+   setStartingDx();
+   velocity.setDx(startingDx);
+   setPoint(startingPoint);
 }
 
 /***********************************************************************
@@ -23,8 +36,13 @@ Bird :: Bird()
 ***********************************************************************/
 Bird :: Bird(Point point)
 {
-   
+      //TODO make bird random location
+   setRandomX();
+   setStartingDx();
+   velocity.setDx(startingDx);
+   setPoint(point);
 }
+
 
 /***********************************************************************
  * 
@@ -55,23 +73,22 @@ int Bird :: hit()
 ***********************************************************************/
 void Bird :: setRandomX()
 {
-
+   srand(time(NULL));
+   startingX = 100;
 }
 
-// /***********************************************************************
-//  * 
-// ***********************************************************************/
-// void Bird :: draw()
-// {
+void Bird :: setStartingDx()
+{
 
-// }
+}
 
 /***********************************************************************
  * 
 ***********************************************************************/
 StandardBird :: StandardBird()
 {
-   radius = 7.5;
+
+
 }
 
 /***********************************************************************
@@ -87,7 +104,7 @@ void StandardBird :: draw()
 ***********************************************************************/
 ToughBird  :: ToughBird()
 {
-
+   int hits = 3;
 }
 
 /***********************************************************************
@@ -95,7 +112,7 @@ ToughBird  :: ToughBird()
 ***********************************************************************/
 void ToughBird :: draw()
 {
-
+   drawToughBird(currentPoint, radius, hits);
 }
 
 /***********************************************************************
@@ -111,5 +128,5 @@ SacredBird :: SacredBird()
 ***********************************************************************/
 void SacredBird :: draw()
 {
-
+   drawSacredBird(currentPoint, radius);
 }

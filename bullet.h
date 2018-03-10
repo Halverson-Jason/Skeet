@@ -25,6 +25,7 @@ class Bullet: public UFO
 
    void draw();
    void fire(Point point, float angle);
+   void setStartingDx();
    
    protected:
 

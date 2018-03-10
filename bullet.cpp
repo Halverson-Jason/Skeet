@@ -36,3 +36,8 @@ void Bullet :: draw()
 ***********************************************************************/
 void Bullet :: fire(Point point, float angle)
 {}
+
+void Bullet :: setStartingDx()
+{
+
+}

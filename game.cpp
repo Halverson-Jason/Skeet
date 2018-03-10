@@ -132,7 +132,7 @@ Bird* Game :: createBird()
 
    // TODO: Fill this in
    
-   newBird = new Bird();
+   newBird = new SacredBird();
    
    return newBird;
 }

@@ -30,6 +30,8 @@ class UFO
    void setPoint(Point point);
    void setVelocity(Velocity velocity);
    void advance();
+   virtual void draw();
+   virtual void setStartingDx();
 
    protected:
       bool alive;
@@ -38,7 +40,7 @@ class UFO
       Point startingPoint;
       // gets random number for starting point
       float startingX;
-      
+      float startingDx;
 
    private:
 

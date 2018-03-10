@@ -26,13 +26,16 @@ class Bird: public UFO
       Bird(Point point);
 
       void kill();
-      virtual void draw();
+      void draw();
       int hit();
       // gets random number for starting poin
       void setRandomX();
+      void setStartingDx();
+      
 
    protected:
-
+      float radius;
+      int hits;
    private:
    
 };

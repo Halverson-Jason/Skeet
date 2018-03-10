@@ -48,3 +48,13 @@ void UFO :: advance()
    currentPoint.addX(velocity.getDx());
    currentPoint.addY(velocity.getDy());
 }
+
+void UFO :: draw()
+{
+
+}
+
+void UFO :: setStartingDx()
+{
+
+}
