@@ -130,6 +130,7 @@ Bird* Game :: createBird()
 {
    Bird* newBird = NULL;
    // TODO: Fill this in
+   // Set random birds
     int ran = random(1,4);
 
     if(ran == 1)
