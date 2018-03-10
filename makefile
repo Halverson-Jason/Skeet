@@ -18,8 +18,8 @@ LFLAGS = -lglut -lGLU -lGL
 ###############################################################
 # Build the main game
 ###############################################################
-a.out: driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o birds.o UFO.o
-	g++ driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o birds.o UFO.o $(LFLAGS)
+a.out: driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o birds.o UFO.o velocity.o
+	g++ driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o birds.o UFO.o velocity.o $(LFLAGS)
 
 ###############################################################
 # Individual files
@@ -60,6 +60,9 @@ birds.o: birds.h birds.cpp UFO.h
 
 UFO.o: UFO.h UFO.cpp
 	g++ -c UFO.cpp
+
+velocity.o: velocity.h velocity.cpp
+	g++ -c velocity.cpp
 
 ###############################################################
 # General rules

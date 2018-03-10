@@ -32,6 +32,13 @@ class UFO
    void advance();
 
    protected:
+      bool alive;
+      Point currentPoint;
+      Velocity velocity;
+      Point startingPoint;
+      // gets random number for starting point
+      float startingX;
+      
 
    private:
 

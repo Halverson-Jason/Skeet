@@ -21,13 +21,15 @@ class Bird: public UFO
 {
    public:
 
-   // constructors
-   Bird();
-   Bird(Point point);
+      // constructors
+      Bird();
+      Bird(Point point);
 
-   void kill();
-   void draw();
-   int hit();
+      void kill();
+      virtual void draw();
+      int hit();
+      // gets random number for starting poin
+      void setRandomX();
 
    protected:
 
@@ -45,11 +47,13 @@ class StandardBird: public Bird
 
    // constructors
    StandardBird();
+   void draw();
 
    protected:
 
    private:
    
+   float radius;
 };
 
 
@@ -62,6 +66,8 @@ class ToughBird: public Bird
 
    // constructors
    ToughBird ();
+
+   void draw();
 
    protected:
 
@@ -79,6 +85,8 @@ class SacredBird: public Bird
 
    // constructors
    SacredBird ();
+
+   void draw();
 
    protected:
 

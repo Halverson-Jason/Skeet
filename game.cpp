@@ -32,6 +32,7 @@ Game :: Game(Point tl, Point br)
    score = 0;
 
    // TODO: Set your bird pointer to a good initial value (e.g., NULL)
+   bird = NULL;
 
 }
 
@@ -131,6 +132,7 @@ Bird* Game :: createBird()
 
    // TODO: Fill this in
    
+   newBird = new Bird();
    
    return newBird;
 }
@@ -195,7 +197,8 @@ void Game :: cleanUpZombies()
       // the bird is dead, but the memory is not freed up yet
       
       // TODO: Clean up the memory used by the bird
-   
+    delete bird;
+    bird = NULL;
    
    }
    
@@ -261,7 +264,10 @@ void Game :: draw(const Interface & ui)
 
    // TODO: Check if you have a valid bird and if it's alive
    // then call it's draw method
-   
+   if (bird != NULL && bird->isAlive()) 
+   {
+      bird->draw();
+   }
   
 
    // draw the rifle
