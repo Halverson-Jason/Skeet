@@ -10,6 +10,12 @@
 #include "uiDraw.h"
 
 #define STARTING_X -200
+#define RANDOM_Y_MIN -180
+#define RANDOM_Y_MAX 180
+#define RANDOM_DX_MIN 3.0
+#define RANDOM_DX_MAX 6.0
+#define RANDOM_DY_MIN -3.0
+#define RANDOM_DY_MAX 3.0
 
 /***********************************************************************
  * Default constructor for Bird()
@@ -26,6 +32,7 @@ Bird :: Bird()
    setStartingDx();
    setStartingDy();
    velocity.setDx(startingDx);
+   velocity.setDy(startingDy);
    setPoint(startingPoint);
 }
 
@@ -67,7 +74,7 @@ int Bird :: hit()
 void Bird :: setRandomY()
 {
 
-   startingY = random(-180,180);
+   startingY = random(RANDOM_Y_MIN, RANDOM_Y_MAX);
 }
 
 /***********************************************************************
@@ -75,7 +82,7 @@ void Bird :: setRandomY()
 ***********************************************************************/
 void Bird :: setStartingDx()
 {
-   startingDx = random(3,7);
+   startingDx = random(RANDOM_DX_MIN, RANDOM_DX_MAX);
 }
 
 /***********************************************************************
@@ -83,6 +90,14 @@ void Bird :: setStartingDx()
 ***********************************************************************/
 void Bird :: setStartingDy()
 {
+      if(startingY <= 0)
+      {
+         startingDy = random(0.0,RANDOM_DY_MAX);
+      }
+      else if(startingY > 0)
+      {
+         startingDy = random(RANDOM_DY_MIN, 0.0);
+      }
 
 }
 

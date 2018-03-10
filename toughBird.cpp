@@ -9,13 +9,16 @@
 #include "toughBird.h" 
 #include "uiDraw.h"
 
+#define STARTING_DX_MIN 2.0
+#define STARTING_DX_MAX 3.0
+
 /***********************************************************************
  * 
 ***********************************************************************/
 ToughBird  :: ToughBird()
 {
    hits = 3;
-   startingDx = random(2,4);
+   startingDx = random(STARTING_DX_MIN, STARTING_DX_MAX);
 }
 
 /***********************************************************************

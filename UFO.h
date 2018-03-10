@@ -32,6 +32,7 @@ class UFO
    void advance();
    virtual void draw();
    virtual void setStartingDx();
+   virtual void setStartingDy();
 
    protected:
       bool alive;
@@ -41,6 +42,7 @@ class UFO
       // gets random number for starting point
       float startingX;
       float startingDx;
+      float startingDy;
 
    private:
 

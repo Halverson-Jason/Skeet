@@ -58,3 +58,8 @@ void UFO :: setStartingDx()
 {
 
 }
+
+void UFO :: setStartingDy()
+{
+
+}
