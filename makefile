@@ -18,8 +18,8 @@ LFLAGS = -lglut -lGLU -lGL
 ###############################################################
 # Build the main game
 ###############################################################
-a.out: driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o birds.o UFO.o velocity.o
-	g++ driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o birds.o UFO.o velocity.o $(LFLAGS)
+a.out: driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o bird.o UFO.o velocity.o toughBird.o standardBird.o sacredBird.o
+	g++ driver.o game.o uiInteract.o uiDraw.o point.o rifle.o bullet.o bird.o UFO.o velocity.o toughBird.o standardBird.o sacredBird.o $(LFLAGS)
 
 ###############################################################
 # Individual files
@@ -38,7 +38,7 @@ uiInteract.o: uiInteract.cpp uiInteract.h
 point.o: point.cpp point.h
 	g++ -c point.cpp
 
-game.o: game.cpp uiDraw.h uiInteract.h point.h rifle.h bullet.h birds.h UFO.h
+game.o: game.cpp uiDraw.h uiInteract.h point.h rifle.h bullet.h bird.h UFO.h
 	g++ -c game.cpp
 
 driver.o: game.h uiInteract.h driver.cpp
@@ -55,14 +55,23 @@ rifle.o: rifle.h point.h uiDraw.h rifle.cpp
 bullet.o: bullet.h bullet.cpp UFO.h
 	g++ -c bullet.cpp
 
-birds.o: birds.h birds.cpp UFO.h
-	g++ -c birds.cpp
+bird.o: bird.h bird.cpp UFO.h standardBird.h sacredBird.h toughBird.h
+	g++ -c bird.cpp
 
 UFO.o: UFO.h UFO.cpp
 	g++ -c UFO.cpp
 
 velocity.o: velocity.h velocity.cpp
 	g++ -c velocity.cpp
+
+toughBird.o: toughBird.h toughBird.cpp
+	g++ -c toughBird.cpp
+
+standardBird.o: standardBird.h standardBird.cpp
+	g++ -c standardBird.cpp
+
+sacredBird.o: sacredBird.h sacredBird.cpp
+	g++ -c sacredBird.cpp
 
 ###############################################################
 # General rules

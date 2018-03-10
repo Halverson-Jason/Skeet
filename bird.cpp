@@ -1,4 +1,4 @@
- /*File: birds.cpp
+ /*File: bird.cpp
  * Author: Jason Halverson
  *
  * Description: Contains the implementations of the
@@ -6,27 +6,25 @@
  *
  *************************************************************/
 
-#include "birds.h" 
+#include "bird.h"
 #include "uiDraw.h"
-#include <stdlib.h>
-#include <time.h>
 
-#define STARTING_X 0
-#define STARTING_Y 0
-#define STARTING_DX 1
+#define STARTING_X -200
 
 /***********************************************************************
- * Default constructor
+ * Default constructor for Bird()
 ***********************************************************************/
 
 Bird :: Bird()
 {
       //TODO make bird random location
-   radius = 15;
-   setRandomX();
+   radius = 15.0;
+   setRandomY();
    startingPoint.setX(STARTING_X);
-   startingPoint.setY(STARTING_Y);
+   startingPoint.setY(startingY);
+   currentPoint = startingPoint;
    setStartingDx();
+   setStartingDy();
    velocity.setDx(startingDx);
    setPoint(startingPoint);
 }
@@ -36,20 +34,15 @@ Bird :: Bird()
 ***********************************************************************/
 Bird :: Bird(Point point)
 {
-      //TODO make bird random location
-   setRandomX();
-   setStartingDx();
-   velocity.setDx(startingDx);
-   setPoint(point);
-}
 
+}
 
 /***********************************************************************
  * 
 ***********************************************************************/
 void Bird :: kill()
 {
-
+   alive = false;
 }
 
 /***********************************************************************
@@ -71,62 +64,25 @@ int Bird :: hit()
 /***********************************************************************
  * gets random number for starting point
 ***********************************************************************/
-void Bird :: setRandomX()
+void Bird :: setRandomY()
 {
-   srand(time(NULL));
-   startingX = 100;
+
+   startingY = random(-180,180);
 }
 
+/***********************************************************************
+ * sets starting Dx
+***********************************************************************/
 void Bird :: setStartingDx()
 {
-
+   startingDx = random(3,7);
 }
 
 /***********************************************************************
- * 
+ * sets starting Dy
 ***********************************************************************/
-StandardBird :: StandardBird()
-{
-
-
-}
-
-/***********************************************************************
- * calls the drawCircle function from uiDraw.cpp
-***********************************************************************/
-void StandardBird :: draw()
-{
-   drawCircle(currentPoint, radius);
-}
-
-/***********************************************************************
- * 
-***********************************************************************/
-ToughBird  :: ToughBird()
-{
-   int hits = 3;
-}
-
-/***********************************************************************
- * 
-***********************************************************************/
-void ToughBird :: draw()
-{
-   drawToughBird(currentPoint, radius, hits);
-}
-
-/***********************************************************************
- * 
-***********************************************************************/
-SacredBird :: SacredBird()
+void Bird :: setStartingDy()
 {
 
 }
 
-/***********************************************************************
- * 
-***********************************************************************/
-void SacredBird :: draw()
-{
-   drawSacredBird(currentPoint, radius);
-}

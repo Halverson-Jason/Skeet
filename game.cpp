@@ -129,10 +129,23 @@ void Game :: advanceBird()
 Bird* Game :: createBird()
 {
    Bird* newBird = NULL;
-
    // TODO: Fill this in
+    int ran = random(1,4);
+
+    if(ran == 1)
+    {
+        newBird = new StandardBird();
+    } 
+
+    else if(ran == 2)
+    {
+        newBird = new ToughBird();
+    }
+    else
+    {
+        newBird = new SacredBird();
+    } 
    
-   newBird = new SacredBird();
    
    return newBird;
 }
