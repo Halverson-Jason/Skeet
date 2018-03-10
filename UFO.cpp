@@ -22,3 +22,28 @@ Point UFO :: getPoint()
 
 }
 
+Velocity UFO:: getVelocity()
+{
+
+}
+
+bool UFO :: isAlive()
+{
+
+}
+
+void UFO :: setPoint(Point point)
+{
+
+}
+
+void UFO :: setVelocity(Velocity velocity)
+{
+
+}
+
+
+void UFO :: advance()
+{
+
+}

@@ -25,13 +25,7 @@ class Bird: public UFO
    Bird();
    Bird(Point point);
 
-   // Point getPoint(); // removed as added to UFO class
-   Velocity getVelocity();
-   bool isAlive();
-   void setPoint(Point point);
-   void setVelocity(Velocity velocity);
    void kill();
-   void advance();
    void draw();
    int hit();
 

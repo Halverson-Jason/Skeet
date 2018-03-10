@@ -25,6 +25,11 @@ class UFO
    UFO();
 
    Point getPoint();
+   Velocity getVelocity();
+   bool isAlive();
+   void setPoint(Point point);
+   void setVelocity(Velocity velocity);
+   void advance();
 
    protected:
 

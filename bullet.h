@@ -12,21 +12,17 @@
 
 #include "velocity.h"
 #include "point.h"
+#include "UFO.h"
 
-class Bullet 
+class Bullet: public UFO 
 {
    public:
 
    // constructors
    Bullet();
 
-   bool isAlive();
-   Velocity getVelocity();
-   Point getPoint();
-   void setPoint(Point point);
-   void setVelocity(Velocity velocity);
    void kill();
-   void advance();
+
    void draw();
    void fire(Point point, float angle);
    
