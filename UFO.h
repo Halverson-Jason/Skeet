@@ -29,6 +29,7 @@ class UFO
    bool isAlive();
    void setPoint(Point point);
    void setVelocity(Velocity velocity);
+   void setVelocity(float dx, float dy);
    void advance();
    virtual void draw();
    virtual void setStartingDx();

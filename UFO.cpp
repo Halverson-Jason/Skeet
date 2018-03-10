@@ -42,6 +42,11 @@ void UFO :: setVelocity(Velocity velocity)
    this->velocity = velocity;
 }
 
+void UFO :: setVelocity(float dx, float dy)
+{
+   velocity.setDx(dx);
+   velocity.setDy(dy);
+}
 
 void UFO :: advance()
 {
