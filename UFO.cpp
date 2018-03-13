@@ -54,6 +54,11 @@ void UFO :: advance()
    currentPoint.addY(velocity.getDy());
 }
 
+void UFO :: kill()
+{
+   alive = false;
+}
+
 void UFO :: draw()
 {
 

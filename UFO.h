@@ -31,6 +31,7 @@ class UFO
    void setVelocity(Velocity velocity);
    void setVelocity(float dx, float dy);
    void advance();
+   void kill();
    virtual void draw();
    virtual void setStartingDx();
    virtual void setStartingDy();

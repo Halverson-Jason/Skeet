@@ -8,6 +8,7 @@
 
 #include "standardBird.h" 
 #include "uiDraw.h"
+#define STANDARDBIRD_HITS 1
 
 /***********************************************************************
  * 
@@ -23,4 +24,15 @@ StandardBird :: StandardBird()
 void StandardBird :: draw()
 {
    drawCircle(currentPoint, (int)radius);
+}
+
+/***********************************************************************
+ * determines how many points to add / subtract
+ * returns int of points
+***********************************************************************/
+int StandardBird :: hit()
+{
+   hits += STANDARDBIRD_HITS;
+   kill();
+   return hits;
 }

@@ -19,10 +19,11 @@ class ToughBird: public Bird
    ToughBird ();
 
    void draw();
+   int hit();
 
    protected:
-
    private:
+      int health;
    
 };
 

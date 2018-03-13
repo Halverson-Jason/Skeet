@@ -24,18 +24,19 @@ class Bird: public UFO
       // constructors
       Bird();
       Bird(Point point);
-      void kill();
       void draw();
-      int hit();
       // gets random number for starting poin
       void setRandomY();
       void setStartingDy();
+      void setStartingDy(double minDY, double maxDY);
       void setStartingDx();
+      virtual int hit()=0;
       
 
    protected:
       float radius;
       int hits;
+      int health;
       float startingY;
       
    private:

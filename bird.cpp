@@ -24,6 +24,8 @@
 Bird :: Bird()
 {
       //TODO make bird random location
+   hits = 0;
+   health = 1;
    radius = 15.0;
    setRandomY();
    startingPoint.setX(STARTING_X);
@@ -47,14 +49,6 @@ Bird :: Bird(Point point)
 /***********************************************************************
  * 
 ***********************************************************************/
-void Bird :: kill()
-{
-   alive = false;
-}
-
-/***********************************************************************
- * 
-***********************************************************************/
 void Bird :: draw()
 {
 
@@ -63,10 +57,9 @@ void Bird :: draw()
 /***********************************************************************
  * 
 ***********************************************************************/
-int Bird :: hit()
-{
-   
-}
+// int Bird :: hit()
+// {
+// }
 
 /***********************************************************************
  * gets random number for starting point
@@ -97,6 +90,22 @@ void Bird :: setStartingDy()
       else if(startingY > 0)
       {
          startingDy = random(RANDOM_DY_MIN, 0.0);
+      }
+
+}
+
+/***********************************************************************
+ * sets starting Dy , but allows to change random
+***********************************************************************/
+void Bird :: setStartingDy(double minDY, double maxDY)
+{
+      if(startingY <= 0)
+      {
+         startingDy = random(0.0, maxDY);
+      }
+      else if(startingY > 0)
+      {
+         startingDy = random(minDY, 0.0);
       }
 
 }

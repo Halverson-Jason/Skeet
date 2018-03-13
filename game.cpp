@@ -44,6 +44,12 @@ Game :: ~Game()
    // TODO: Check to see if there is currently a bird allocated
    //       and if so, delete it.
 
+   if (bird != NULL)
+   {
+      delete bird;
+      bird == NULL;
+   }
+
 }
 
 /***************************************
@@ -146,7 +152,6 @@ Bird* Game :: createBird()
     {
         newBird = new SacredBird();
     } 
-   
    
    return newBird;
 }

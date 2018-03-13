@@ -18,6 +18,7 @@ class StandardBird: public Bird
    // constructors
    StandardBird();
    void draw();
+   int hit();
 
    protected:
 

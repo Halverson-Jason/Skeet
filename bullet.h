@@ -20,9 +20,6 @@ class Bullet: public UFO
 
    // constructors
    Bullet();
-
-   void kill();
-
    void draw();
    void fire(Point point, float angle);
    void setStartingDx();

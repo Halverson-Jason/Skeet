@@ -19,7 +19,8 @@ class SacredBird: public Bird
    SacredBird ();
 
    void draw();
-
+   int hit();
+   
    protected:
 
    private:
