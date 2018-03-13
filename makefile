@@ -1,15 +1,13 @@
 ###############################################################
 # Program:
-#     Milestone 08, Skeet
+#     Project 09, Skeet
 #     Brother Alvey, CS165
 # Author:
 #     Jason Halverson
 # Summary:
-#     Milestone 08 Skeet
+#     Project 09 Skeet
 # Above and Beyond
-#     When you submit your final project (not for milestones),
-#     list anything here that you did to go above and beyond
-#     the base requirements for your project.
+#     Added a start press , press the F1 key to start
 ###############################################################
 
 

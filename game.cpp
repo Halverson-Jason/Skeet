@@ -12,6 +12,7 @@
 
 #include "game.h"
 
+#include <string>
 #include "uiDraw.h"
 #include "uiInteract.h"
 #include "point.h"
@@ -30,7 +31,7 @@ Game :: Game(Point tl, Point br)
 {
    // Set up the initial conditions of the game
    score = 0;
-
+   bStartGame = false;
    // TODO: Set your bird pointer to a good initial value (e.g., NULL)
    bird = NULL;
 
@@ -58,11 +59,19 @@ Game :: ~Game()
  ***************************************/
 void Game :: advance()
 {
+   if (bStartGame)
+   {
    advanceBullets();
    advanceBird();
 
    handleCollisions();
    cleanUpZombies();
+   }
+
+   else
+   {
+      startGame();
+   }
 }
 
 /***************************************
@@ -271,6 +280,12 @@ void Game :: handleInput(const Interface & ui)
       
       bullets.push_back(newBullet);
    }
+
+   // Check for "Y" press
+   if (ui.isY())
+   {
+      bStartGame = true;
+   }
 }
 
 /*********************************************
@@ -310,3 +325,15 @@ void Game :: draw(const Interface & ui)
 
 }
 
+/*************************************************
+ * Prompt user if they want to start game
+ *************************************************/
+void Game :: startGame()
+{
+   Point center;
+   char userPrompt[] = "Press 'F1' to start";
+   center.setX(-50);
+   center.setY(0);
+   drawText(center, userPrompt);
+
+}

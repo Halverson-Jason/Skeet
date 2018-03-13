@@ -91,6 +91,13 @@ private:
    
    void handleCollisions();
    void cleanUpZombies();
+
+   /*************************************************
+    * Private value to check if user want to play
+    *************************************************/
+   bool bStartGame;
+
+   void startGame();
 };
 
 #endif /* GAME_H */
